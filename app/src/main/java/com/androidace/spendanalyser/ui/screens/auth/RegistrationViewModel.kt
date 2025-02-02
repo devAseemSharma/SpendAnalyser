@@ -1,19 +1,34 @@
 package com.androidace.spendanalyser.ui.screens.auth
 
+import androidx.compose.ui.focus.FocusState
 import androidx.lifecycle.ViewModel
-import com.androidace.spendanalyser.ui.components.common.SAState
 import com.androidace.spendanalyser.ui.components.common.UIStateHandlerImpl
 import com.androidace.spendanalyser.ui.components.common.UiStateHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class RegistrationViewModel @Inject constructor(val uiStateImpl: UIStateHandlerImpl) : ViewModel() {
-    private var _screenState = MutableStateFlow(RegisterScreenState.ScreenState(uiStateImpl))
+class RegistrationViewModel @Inject constructor(val uiStateImpl: UIStateHandlerImpl) : ViewModel(),
+    UiStateHandler by uiStateImpl {
+
+
+    fun onEvent(event: RegisterScreenEvent) {
+        when (event) {
+            RegisterScreenEvent.OnRegisterClick -> TODO()
+            is RegisterScreenEvent.UserNameEntered -> TODO()
+            is RegisterScreenEvent.UserNameFocus -> TODO()
+        }
+    }
 
 }
 
 sealed class RegisterScreenState {
-    data class ScreenState(val uiStateImpl: UIStateHandlerImpl) : UiStateHandler by uiStateImpl
 }
+
+sealed interface RegisterScreenEvent {
+    data class UserNameEntered(val value: String) : RegisterScreenEvent
+    data class UserNameFocus(val focusState: FocusState) : RegisterScreenEvent
+    object OnRegisterClick : RegisterScreenEvent
+
+}
+
