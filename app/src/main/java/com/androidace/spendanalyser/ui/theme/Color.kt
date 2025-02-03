@@ -40,6 +40,8 @@ val surfaceContainerHighestLight = Color(0xFFE7E0EE)
 val success = Color(0XFF29AC08)
 val secondaryFixed = Color(0XFFE5EA58)
 val secondaryFixedDim = Color(0XFFC9CE3E)
+val primaryFixed = Color(0XFFEADDFF)
+val onPrimaryFixed = Color(0XFF24005A)
 
 
 

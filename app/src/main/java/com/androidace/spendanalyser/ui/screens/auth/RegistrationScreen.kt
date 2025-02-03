@@ -4,7 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -20,7 +22,8 @@ import com.androidace.spendanalyser.ui.components.common.SAState
 fun RegistrationScreen(viewModel: RegistrationViewModel = hiltViewModel(), onExit: () -> Unit) {
     val uiState by viewModel.uiStateImpl.uiStateFlow.collectAsStateWithLifecycle()
     RegistrationScreen(
-        uiState = uiState
+        uiState = uiState,
+        onExit = onExit
     )
 }
 
@@ -28,6 +31,7 @@ fun RegistrationScreen(viewModel: RegistrationViewModel = hiltViewModel(), onExi
 @Composable
 fun RegistrationScreen(
     uiState: SAState,
+    onExit: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     SAScreen(
@@ -52,6 +56,10 @@ fun RegistrationScreen(
                         painter = painterResource(R.drawable.ic_sa_screen),
                         contentDescription = "Icon"
                     )
+
+                    Button(onClick = onExit) {
+                        Text("Register")
+                    }
                 }
             }
         },

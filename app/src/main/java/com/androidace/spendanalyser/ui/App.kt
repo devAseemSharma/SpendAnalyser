@@ -6,7 +6,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.androidace.spendanalyser.ui.navigation.PinScreen
 import com.androidace.spendanalyser.ui.navigation.RegisterScreen
+import com.androidace.spendanalyser.ui.screens.auth.PinScreen
 import com.androidace.spendanalyser.ui.screens.auth.RegistrationScreen
 
 @Composable
@@ -22,8 +24,11 @@ fun App(
     ) {
         composable<RegisterScreen> {
             RegistrationScreen(onExit = {
-
+                navController.navigate(PinScreen)
             })
+        }
+        composable<PinScreen> {
+            PinScreen(onExit = {})
         }
     }
 }
