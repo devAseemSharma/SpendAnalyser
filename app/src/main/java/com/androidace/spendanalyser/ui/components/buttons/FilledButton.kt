@@ -11,12 +11,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TabPosition
 import androidx.compose.material3.TabRow
@@ -31,13 +34,37 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.androidace.spendanalyser.ui.theme.primary
+import com.androidace.spendanalyser.ui.theme.stateLayerOnSurfaceOpacity12
 import com.androidace.spendanalyser.ui.theme.statePrimaryContainer
 import kotlinx.collections.immutable.PersistentList
 import kotlinx.collections.immutable.toPersistentList
 
 @Composable
-fun FilledButton(modifier: Modifier = Modifier) {
-
+fun FilledButton(
+    buttonText: String,
+    isEnabled: Boolean = true,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Button(
+        onClick = onClick,
+        enabled = isEnabled,
+        shape = RoundedCornerShape(16.dp),
+        colors = ButtonDefaults.buttonColors()
+            .copy(
+                containerColor = primary,
+                disabledContainerColor = stateLayerOnSurfaceOpacity12,
+                disabledContentColor = MaterialTheme.colorScheme.onSurface,
+                contentColor = MaterialTheme.colorScheme.onPrimary
+            ), modifier = modifier
+    ) {
+        Text(
+            text = buttonText,
+            style = MaterialTheme.typography.titleMedium.copy(color = MaterialTheme.colorScheme.onPrimary),
+            modifier = Modifier.padding(horizontal = 24.dp, vertical = 12.dp)
+        )
+    }
 }
 
 data class Separator(
@@ -183,13 +210,23 @@ interface SegmentData {
 fun AnimatedSegmentedButton() {
     val options =
         listOf(Separator("Favorites"), Separator("Trending"), Separator("Saved"))
-    AnimatedSegmentsBar(
-        tabList = options,
-        backgroundColor = statePrimaryContainer,
-        defaultSelectedItemIndex = 0,
-        onTabSelected = {
-            Log.d("Item Selected", it.title)
-        },
-        modifier = Modifier.padding(16.dp)
-    )
+    Column {
+        FilledButton(
+            buttonText = "Label",
+            onClick = {},
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        )
+        AnimatedSegmentsBar(
+            tabList = options,
+            backgroundColor = statePrimaryContainer,
+            defaultSelectedItemIndex = 0,
+            onTabSelected = {
+                Log.d("Item Selected", it.title)
+            },
+            modifier = Modifier.padding(16.dp)
+        )
+    }
+
 }
