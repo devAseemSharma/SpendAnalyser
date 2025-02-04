@@ -55,13 +55,13 @@ fun FilledButton(
             .copy(
                 containerColor = primary,
                 disabledContainerColor = stateLayerOnSurfaceOpacity12,
-                disabledContentColor = MaterialTheme.colorScheme.onSurface,
+                disabledContentColor = MaterialTheme.colorScheme.outline,
                 contentColor = MaterialTheme.colorScheme.onPrimary
             ), modifier = modifier
     ) {
         Text(
             text = buttonText,
-            style = MaterialTheme.typography.titleMedium.copy(color = MaterialTheme.colorScheme.onPrimary),
+            style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(horizontal = 24.dp, vertical = 12.dp)
         )
     }
@@ -214,6 +214,7 @@ fun AnimatedSegmentedButton() {
         FilledButton(
             buttonText = "Label",
             onClick = {},
+            isEnabled = true,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
