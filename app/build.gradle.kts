@@ -77,4 +77,6 @@ dependencies {
     implementation(libs.kotlinx.serialization)
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.3")
+    implementation(libs.rebugger)
+
 }

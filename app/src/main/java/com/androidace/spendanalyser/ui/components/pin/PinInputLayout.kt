@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import com.androidace.spendanalyser.ui.components.pin.model.PinCellModel
 import com.androidace.spendanalyser.ui.components.pin.model.PinState
 import com.androidace.spendanalyser.ui.components.pin.model.PinVerifyState
-import com.androidace.spendanalyser.ui.theme.primary
 import com.androidace.spendanalyser.ui.theme.success
 import kotlinx.collections.immutable.PersistentList
 

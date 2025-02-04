@@ -13,6 +13,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
 composeBom = "2025.01.01"
+rebugger = "1.0.0-rc03"
 uiTextGoogleFonts = "1.7.7"
 coreSplashscreen = "1.0.1"
 kotlinx-serialization = "1.8.0"
@@ -46,6 +47,7 @@ ksp = {group = "com.google.devtools.ksp", name = "symbol-processing-api", versio
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
 hilt-compose-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-compose-nav" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger" }
+rebugger = { module = "io.github.theapache64:rebugger", version.ref = "rebugger" }
 
 
 
