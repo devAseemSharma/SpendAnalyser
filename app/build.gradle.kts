@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.androidace.spendanalyser"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -63,6 +63,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
+    //Room
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
 
     //Splash
     implementation(libs.androidx.core.splashscreen)
@@ -77,6 +82,13 @@ dependencies {
     implementation(libs.kotlinx.serialization)
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.7.3")
+
+    // Security
+    implementation (libs.androidx.security.crypto)
+
+    // Sqlcipher
+    implementation (libs.android.database.sqlcipher)
+
     implementation(libs.rebugger)
 
 }
