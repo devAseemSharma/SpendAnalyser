@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SpendAnalyser</string>
     <string name="hg_resource_pin_section_title">Create PIN</string>
+    <string name="welcome_text">Welcome to SpendLess!\nHow can we address you?</string>
+    <string name="unique_username">Create unique username</string>
+    <string name="already_account">Already have an account?</string>
 </resources>
