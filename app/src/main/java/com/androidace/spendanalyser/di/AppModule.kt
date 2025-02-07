@@ -15,7 +15,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class AppModule {
+class AppModule {
     @Provides
     @Singleton
     fun provideUserDatabasePassphrase(@ApplicationContext context: Context) =

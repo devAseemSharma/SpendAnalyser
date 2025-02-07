@@ -1,6 +1,7 @@
 package com.androidace.spendanalyser.ui.components.common
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
@@ -10,7 +11,8 @@ fun SAScreen(
     loadingScreen: @Composable () -> Unit,
     bottomSheet: @Composable () -> Unit,
     content: @Composable () -> Unit,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier
+) {
     when {
         saState.isLoading -> {
             Content(content, bottomSheet)
@@ -29,6 +31,7 @@ private fun Content(
     bottomSheet: @Composable() (() -> Unit)
 ) {
     Box {
+
         content()
         bottomSheet()
     }

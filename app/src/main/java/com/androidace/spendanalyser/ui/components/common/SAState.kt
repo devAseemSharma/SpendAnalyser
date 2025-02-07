@@ -6,7 +6,9 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 data class SAState(
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    val errorDescription: String? = "",
+
 )
 
 @ViewModelScoped
