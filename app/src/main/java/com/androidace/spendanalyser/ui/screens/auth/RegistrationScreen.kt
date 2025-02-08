@@ -126,7 +126,14 @@ fun RegistrationScreen(
                         modifier = Modifier.padding(top = 8.dp)
                     )
 
-                    SATextField()
+                    SATextField(
+                        text = "",
+                        hintText = "username",
+                        enabled = true,
+                        hintTextStyle = MaterialTheme.typography.displayMedium,
+                        textStyle = MaterialTheme.typography.displayMedium,
+                        onValueChange = {},
+                        modifier = Modifier.fillMaxWidth().padding(top = 36.dp))
                 }
             }
         },
