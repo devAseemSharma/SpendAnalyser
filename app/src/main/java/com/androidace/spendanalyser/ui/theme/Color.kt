@@ -45,7 +45,7 @@ val primaryFixed = Color(0XFFEADDFF)
 val onPrimaryFixed = Color(0XFF24005A)
 val statePrimaryContainer = Color(0XFF8138FF).copy(alpha = 0.08f)
 val stateLayerOnSurfaceOpacity12 = Color(0XFF1B1B1C).copy(alpha = 0.12f)
-
+val stateLayerOnBackground = Color(0XFF1D1A25).copy(alpha = 0.08f)
 
 
 

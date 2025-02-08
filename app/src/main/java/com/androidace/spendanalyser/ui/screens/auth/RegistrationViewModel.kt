@@ -12,6 +12,7 @@ class RegistrationViewModel @Inject constructor(val uiStateImpl: UIStateHandlerI
     UiStateHandler by uiStateImpl {
 
 
+
     fun onEvent(event: RegisterScreenEvent) {
         when (event) {
             RegisterScreenEvent.OnRegisterClick -> TODO()

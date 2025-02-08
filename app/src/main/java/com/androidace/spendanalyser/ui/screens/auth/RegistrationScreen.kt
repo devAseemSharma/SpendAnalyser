@@ -31,6 +31,7 @@ import com.androidace.spendanalyser.ui.components.common.SAScreen
 import com.androidace.spendanalyser.ui.components.common.SAState
 import com.androidace.spendanalyser.ui.components.common.SnackbarController
 import com.androidace.spendanalyser.ui.components.common.SnackbarEvent
+import com.androidace.spendanalyser.ui.components.textfields.SATextField
 import kotlinx.coroutines.launch
 
 @Composable
@@ -124,6 +125,8 @@ fun RegistrationScreen(
                         style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurfaceVariant),
                         modifier = Modifier.padding(top = 8.dp)
                     )
+
+                    SATextField()
                 }
             }
         },
