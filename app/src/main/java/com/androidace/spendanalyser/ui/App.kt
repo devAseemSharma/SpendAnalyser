@@ -30,8 +30,10 @@ import androidx.navigation.compose.rememberNavController
 import com.androidace.spendanalyser.ui.components.common.ObserveAsEvents
 import com.androidace.spendanalyser.ui.components.common.SnackbarController
 import com.androidace.spendanalyser.ui.navigation.PinScreen
+import com.androidace.spendanalyser.ui.navigation.PromptPinScreen
 import com.androidace.spendanalyser.ui.navigation.RegisterScreen
 import com.androidace.spendanalyser.ui.screens.auth.PinScreen
+import com.androidace.spendanalyser.ui.screens.auth.PromptPinScreen
 import com.androidace.spendanalyser.ui.screens.auth.RegistrationScreen
 import kotlinx.coroutines.launch
 
@@ -99,6 +101,10 @@ fun App(
             }
             composable<PinScreen> {
                 PinScreen(onExit = {})
+            }
+
+            composable<PromptPinScreen> {
+                PromptPinScreen(onExit = {})
             }
         }
     }

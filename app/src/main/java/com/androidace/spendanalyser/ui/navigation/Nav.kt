@@ -7,3 +7,6 @@ object RegisterScreen
 
 @Serializable
 object PinScreen
+
+@Serializable
+object PromptPinScreen
