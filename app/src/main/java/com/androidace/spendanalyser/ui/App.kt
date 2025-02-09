@@ -29,9 +29,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.androidace.spendanalyser.ui.components.common.ObserveAsEvents
 import com.androidace.spendanalyser.ui.components.common.SnackbarController
+import com.androidace.spendanalyser.ui.navigation.LoginScreen
 import com.androidace.spendanalyser.ui.navigation.PinScreen
 import com.androidace.spendanalyser.ui.navigation.PromptPinScreen
 import com.androidace.spendanalyser.ui.navigation.RegisterScreen
+import com.androidace.spendanalyser.ui.screens.auth.LoginScreen
 import com.androidace.spendanalyser.ui.screens.auth.PinScreen
 import com.androidace.spendanalyser.ui.screens.auth.PromptPinScreen
 import com.androidace.spendanalyser.ui.screens.auth.RegistrationScreen
@@ -95,10 +97,22 @@ fun App(
             navController = navController, startDestination = RegisterScreen,
         ) {
             composable<RegisterScreen> {
-                RegistrationScreen(onExit = {
-                    navController.navigate(PinScreen)
+                RegistrationScreen(
+                    onExit = {
+                        navController.navigate(PinScreen)
+                    },
+                    onLoginRedirect = {
+                        navController.navigate(LoginScreen)
+                    },
+                )
+            }
+
+            composable<LoginScreen> {
+                LoginScreen(onExit = {
+
                 })
             }
+
             composable<PinScreen> {
                 PinScreen(onExit = {})
             }

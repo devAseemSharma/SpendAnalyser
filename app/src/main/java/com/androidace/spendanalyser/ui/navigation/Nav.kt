@@ -10,3 +10,6 @@ object PinScreen
 
 @Serializable
 object PromptPinScreen
+
+@Serializable
+object LoginScreen

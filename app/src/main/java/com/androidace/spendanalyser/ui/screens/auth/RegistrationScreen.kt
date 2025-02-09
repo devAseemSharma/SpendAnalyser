@@ -35,7 +35,11 @@ import com.androidace.spendanalyser.ui.components.textfields.SATextField
 import kotlinx.coroutines.launch
 
 @Composable
-fun RegistrationScreen(viewModel: RegistrationViewModel = hiltViewModel(), onExit: () -> Unit) {
+fun RegistrationScreen(
+    viewModel: RegistrationViewModel = hiltViewModel(),
+    onExit: () -> Unit,
+    onLoginRedirect: () -> Unit
+) {
     val uiState by viewModel.uiStateImpl.uiStateFlow.collectAsStateWithLifecycle()
     val scope = rememberCoroutineScope()
     RegistrationScreen(
@@ -50,9 +54,7 @@ fun RegistrationScreen(viewModel: RegistrationViewModel = hiltViewModel(), onExi
                 )
             }
         },
-        onLoginRedirect = {
-            onExit.invoke()
-        }
+        onLoginRedirect = onLoginRedirect
     )
 }
 
@@ -133,7 +135,10 @@ fun RegistrationScreen(
                         hintTextStyle = MaterialTheme.typography.displayMedium,
                         textStyle = MaterialTheme.typography.displayMedium,
                         onValueChange = {},
-                        modifier = Modifier.fillMaxWidth().padding(top = 36.dp))
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 36.dp)
+                    )
                 }
             }
         },
