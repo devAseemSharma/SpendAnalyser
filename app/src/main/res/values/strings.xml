@@ -4,4 +4,7 @@
     <string name="welcome_text">Welcome to SpendLess!\nHow can we address you?</string>
     <string name="unique_username">Create unique username</string>
     <string name="already_account">Already have an account?</string>
+    <string name="new_to_spendless">New to SpendAnalyser?</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="enter_login_details">Enter your login details</string>
 </resources>

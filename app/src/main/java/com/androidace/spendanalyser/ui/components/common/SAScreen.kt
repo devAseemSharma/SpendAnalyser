@@ -8,8 +8,8 @@ import androidx.compose.ui.Modifier
 @Composable
 fun SAScreen(
     saState: SAState,
-    loadingScreen: @Composable () -> Unit,
-    bottomSheet: @Composable () -> Unit,
+    loadingScreen: @Composable () -> Unit = {},
+    bottomSheet: @Composable () -> Unit = {},
     content: @Composable () -> Unit,
     modifier: Modifier = Modifier
 ) {

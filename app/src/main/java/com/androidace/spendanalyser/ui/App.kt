@@ -108,8 +108,8 @@ fun App(
             }
 
             composable<LoginScreen> {
-                LoginScreen(onExit = {
-
+                LoginScreen(onRegisterClick = {
+                    navController.navigate(RegisterScreen)
                 })
             }
 
