@@ -121,7 +121,9 @@ fun LoginScreen(
                     hintTextStyle = MaterialTheme.typography.bodyMedium,
                     textStyle = MaterialTheme.typography.bodyMedium,
                     onValueChange = onUserNameChanged,
-                    modifier = Modifier.padding(bottom = 16.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 36.dp, bottom = 16.dp)
                 )
 
                 SATextFieldWithBorder(
@@ -130,7 +132,8 @@ fun LoginScreen(
                     hintText = "PIN",
                     hintTextStyle = MaterialTheme.typography.bodyMedium,
                     textStyle = MaterialTheme.typography.bodyMedium,
-                    onValueChange = onPasswordChanged
+                    onValueChange = onPasswordChanged,
+                    modifier = Modifier.fillMaxWidth()
                 )
             }
         }

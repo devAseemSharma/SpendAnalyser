@@ -26,7 +26,7 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun onLoginClick(){
+    private fun onLoginClick() {
 
     }
 
@@ -34,30 +34,38 @@ class LoginViewModel @Inject constructor(
         _loginScreenState.update {
             it.copy(userName = value)
         }
+        validateUserName()
     }
 
     private fun onPasswordEntered(value: String) {
         _loginScreenState.update {
             it.copy(password = value)
         }
+        validatePassword()
     }
 
-    private fun validate() {
+    private fun validateUserName() {
         if (_loginScreenState.value.userName.isEmpty()) {
             _loginScreenState.update {
                 it.copy(userNameError = "User name cannot be empty")
             }
             return
         }
-        if (_loginScreenState.value.passwordError.isEmpty()) {
+
+        _loginScreenState.update {
+            it.copy(userNameError = "")
+        }
+    }
+
+    private fun validatePassword() {
+        if (_loginScreenState.value.password.isEmpty()) {
             _loginScreenState.update {
                 it.copy(passwordError = "Password cannot be empty")
             }
             return
         }
-
         _loginScreenState.update {
-            it.copy(userNameError = "", passwordError = "")
+            it.copy(passwordError = "")
         }
     }
 
