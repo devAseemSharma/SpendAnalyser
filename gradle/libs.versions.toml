@@ -20,6 +20,7 @@ securityCrypto = "1.0.0"
 uiTextGoogleFonts = "1.7.7"
 coreSplashscreen = "1.0.1"
 kotlinx-serialization = "1.8.0"
+dataStoreVersion= "1.1.2"
 
 [libraries]
 android-database-sqlcipher = { module = "net.zetetic:android-database-sqlcipher", version.ref = "androidDatabaseSqlcipher" }
@@ -42,6 +43,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name="kotlinx-serialization-json", version.ref = "kotlinx-serialization"}
+data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStoreVersion" }
 
 #KSP processing
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
