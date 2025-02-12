@@ -8,4 +8,5 @@ interface IPreferencesDataStore {
     suspend fun saveBioMetricPinPrompt(isBioMetricEnabled: Boolean)
     suspend fun saveSessionExpiryDuration(duration: String)
     suspend fun saveLockedOutDuration(duration: String)
+    suspend fun getExpenseFormat():String?
 }

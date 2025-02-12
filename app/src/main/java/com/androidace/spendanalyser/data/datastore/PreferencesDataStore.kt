@@ -10,10 +10,17 @@ import com.androidace.spendanalyser.data.datastore.prefs.PreferencesKeys.PREF_EX
 import com.androidace.spendanalyser.data.datastore.prefs.PreferencesKeys.PREF_SAVE_BIOMETRIC_ENABLED
 import com.androidace.spendanalyser.data.datastore.prefs.PreferencesKeys.PREF_SAVE_LOCKED_OUT_DURATION
 import com.androidace.spendanalyser.data.datastore.prefs.PreferencesKeys.PREF_SAVE_SESSION_EXPIRY_DURATION
+import com.androidace.spendanalyser.di.qualifiers.Dispatcher
+import com.androidace.spendanalyser.di.qualifiers.SADispatchers
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class PreferencesDataStore @Inject constructor(
-    private val prefsDataStore: DataStore<Preferences>
+    private val prefsDataStore: DataStore<Preferences>,
+    @Dispatcher(SADispatchers.IO) val dispatcher: CoroutineDispatcher
 ) : IPreferencesDataStore {
     override suspend fun saveExpenseFormat(format: String) {
         prefsDataStore.edit {
@@ -54,6 +61,14 @@ class PreferencesDataStore @Inject constructor(
     override suspend fun saveLockedOutDuration(duration: String) {
         prefsDataStore.edit {
             it[PREF_SAVE_LOCKED_OUT_DURATION] = duration
+        }
+    }
+
+    override suspend fun getExpenseFormat(): String? {
+        return withContext(dispatcher) {
+            prefsDataStore.data.map {
+                it[PREF_EXPENSE_FORMAT_KEY]
+            }.firstOrNull()
         }
     }
 
